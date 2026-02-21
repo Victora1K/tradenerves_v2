@@ -1,0 +1,42 @@
+# Dependencies
+webfront/node_modules/
+webfront/.pnp
+webfront/.pnp.js
+
+# Testing
+webfront/coverage/
+
+# Production build
+webfront/build/
+
+# Misc
+webfront/.DS_Store
+webfront/.env.local
+webfront/.env.development.local
+webfront/.env.test.local
+webfront/.env.production.local
+
+# Logs
+webfront/npm-debug.log*
+webfront/yarn-debug.log*
+webfront/yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz

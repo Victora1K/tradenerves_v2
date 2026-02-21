@@ -1,0 +1,53 @@
+.nav-link,
+.account {
+    transition: all 0.3s ease;
+    color: inherit; /* Keeps original color by default */
+    padding: 8px;
+    float: left;
+}
+
+.NavBar {
+
+    padding: 7px;
+}
+
+.NavBar:hover {
+
+    padding: 8px;
+}
+
+.nav-link:hover, 
+.account:hover {
+    color: #007bff; /* Changes to blue on hover */
+}
+/*
+img{
+    object-fit: scale-down;
+    max-height: 70px;
+    }
+   */ 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2F4F4F;
+  }
+  
+  li {
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    height: 50px;
+  }
+  
+  li:hover {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+  }
+  

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    min-height: 100vh;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #020617, #0f172a, #020617);
+    color: #f3f4f6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', Menlo, Monaco, monospace;
+    font-size: 0.875rem;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-glass;
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:shadow-card-hover hover:bg-white/10;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white/10 hover:bg-white/20 text-gray-100 rounded-lg font-medium transition-all duration-200 border border-white/10;
+  }
+
+  .btn-success {
+    @apply px-4 py-2 bg-success hover:bg-success-dark text-white rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 bg-danger hover:bg-danger-dark text-white rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .input-modern {
+    @apply bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+  }
+
+  .select-modern {
+    @apply bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(to right, #0ea5e9, #0284c7) 1;
+  }
+}

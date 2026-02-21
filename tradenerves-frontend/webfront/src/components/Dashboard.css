@@ -1,0 +1,239 @@
+.playback-controls button,.controls button,
+.trading-controls button {
+    transition: all 0.3s ease;
+    background-color: #1d43ad; /* Default blue */
+}
+
+.playback-controls button:hover,.controls button:hover,
+.trading-controls button:hover {
+    transform: scale(1.1);
+    background-color: #350cea; /* Light blue on hover */
+}
+
+.custom-select {
+    min-width: 350px;
+  }
+  
+  .custom-select select {
+    appearance: none;
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+  }
+
+  /* High contrast for all select dropdowns and their options */
+  select {
+    background-color: rgba(31, 41, 55, 0.8) !important;
+    color: #f3f4f6 !important;
+  }
+
+  select option {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+    padding: 0.5rem !important;
+  }
+
+  select option:hover,
+  select option:focus,
+  select option:checked {
+    background-color: #374151 !important;
+    color: #ffffff !important;
+  }
+
+.center {
+    align-self: baseline;
+    align-items: center;
+    justify-items: center;
+}
+
+body {
+    padding-top: 85px;
+  }
+
+.sequence-builder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+ }
+
+ .sequence-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .sequence-input {
+    min-width: 350px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #caced1;
+ }
+
+ .dashboard-compact-actions .btn {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.82rem;
+    line-height: 1.1;
+    width: fit-content;
+    max-width: 100%;
+    flex: 0 0 auto;
+ }
+
+/* ========================================
+   RESPONSIVE GRID LAYOUTS
+   ======================================== */
+
+/* Main dashboard layout: chart + sidebar */
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* Stats grid: 2 columns */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+/* Controls grid: 2fr + 1fr */
+.controls-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.5rem;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablets and smaller (under 992px) */
+@media (max-width: 991px) {
+  body {
+    padding-top: 70px;
+  }
+
+  /* Stack main grid vertically on tablets */
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .custom-select {
+    min-width: 250px;
+  }
+
+  .sequence-input {
+    min-width: 250px;
+  }
+}
+
+/* Mobile devices (under 768px) */
+@media (max-width: 767px) {
+  body {
+    padding-top: 60px;
+  }
+
+  /* Stack all grids to single column */
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  /* Allow sidebar to scroll on mobile */
+  .dashboard-main-grid > div:last-child {
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make selects and inputs full width on mobile */
+  .custom-select {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .custom-select select {
+    font-size: 1rem;
+    padding: 0.5em 3em 0.5em 0.8em;
+  }
+
+  .sequence-input {
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  /* Adjust button sizes for mobile */
+  .playback-controls button,
+  .controls button,
+  .trading-controls button,
+  .dashboard-compact-actions .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Ensure trading action buttons are visible and tappable */
+  .stats-grid button {
+    font-size: 0.9rem !important;
+    padding: 0.75rem 1rem !important;
+    min-height: 44px; /* iOS minimum touch target */
+  }
+
+  /* Stack sequence builder vertically */
+  .sequence-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sequence-builder {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+/* Small mobile devices (under 480px) */
+@media (max-width: 479px) {
+  body {
+    padding-top: 50px;
+  }
+
+  .custom-select select {
+    font-size: 0.9rem;
+    padding: 0.4em 2.5em 0.4em 0.6em;
+  }
+
+  .sequence-input {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .playback-controls button,
+  .controls button,
+  .trading-controls button {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
