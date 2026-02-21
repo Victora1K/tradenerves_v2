@@ -11,7 +11,11 @@
 *.db-wal
 *.sqlite
 *.sqlite3
-tradenerves-backend/backend/db/
+tradenerves-backend/backend/db/*.db
+tradenerves-backend/backend/db/*.db-journal
+tradenerves-backend/backend/db/*.db-shm
+tradenerves-backend/backend/db/*.db-wal
+tradenerves-backend/backend/db/__pycache__/
 tradenerves-backend/backend/data/*.db
 
 # ===================================
