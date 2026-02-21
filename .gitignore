@@ -1,0 +1,184 @@
+# ===================================
+# TRADENERVES PROJECT GITIGNORE
+# ===================================
+
+# ===================================
+# DATABASES - NEVER COMMIT
+# ===================================
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+tradenerves-backend/backend/db/
+tradenerves-backend/backend/data/*.db
+
+# ===================================
+# PYTHON / BACKEND
+# ===================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+tradenerves-backend/venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Flask
+instance/
+.webassets-cache
+
+# ===================================
+# NODE / FRONTEND
+# ===================================
+# Dependencies
+node_modules/
+tradenerves-frontend/webfront/node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production builds
+build/
+tradenerves-frontend/webfront/build/
+dist/
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ===================================
+# ENVIRONMENT & SECRETS
+# ===================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.key
+*.pem
+*.crt
+
+# API Keys (check your code for hardcoded keys)
+config/secrets.py
+secrets.json
+
+# ===================================
+# IDE / EDITORS
+# ===================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ===================================
+# OPERATING SYSTEM
+# ===================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ===================================
+# DOCKER
+# ===================================
+# Don't ignore Dockerfiles, but ignore runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# ===================================
+# MISC
+# ===================================
+# Backup files
+*.bak
+*.backup
+*.orig
+*.tmp
+*~
+
+# Compressed files (unless intentional)
+*.zip
+*.tar.gz
+*.rar
+
+# Large data files (unless needed)
+*.csv
+*.xlsx
+*.json
+# Uncomment if you have large data files:
+# data/
+# datasets/
+
+# ===================================
+# PROJECT SPECIFIC
+# ===================================
+# Old deployment notes (optional - remove if you want to keep)
+tradenerves-frontend/webfront/webfront-steps.txt
+
+# Local testing files
+test_*.py
+scratch.py
+debug.py
