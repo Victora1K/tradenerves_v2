@@ -92,7 +92,7 @@ const CandlestickChart = ({ displayData, symbol, startPlayback, stopPlayback, re
                 {isSymbolScrambled ? 'Un' : ''}scramble Ticker</button>
             </p1>
             {/* Plotly Candlestick Chart */}
-            <div>
+            <div style={chartContainer}>
             <Plot
                 data={[
                     {
@@ -106,10 +106,11 @@ const CandlestickChart = ({ displayData, symbol, startPlayback, stopPlayback, re
                         yaxis: 'y',
                     },
                 ]}
-                layout={isDarkTheme ? darkThemeLayout : lightThemeLayout}
-                //style={ChartStyle}
+                layout={{ ...(isDarkTheme ? darkThemeLayout : lightThemeLayout), autosize: true }}
+                style={ChartStyle}
+                useResizeHandler={true}
                 config={{
-                    displayModeBar: false, // Hide the plotly toolbar for a cleaner look
+                    displayModeBar: false,
                 }}
             />
             </div>
@@ -141,10 +142,15 @@ const ThemeStyle = {
   color: 'black',
 };
 
+const chartContainer = {
+    width: '100%',
+    height: '60vh',
+    minHeight: '300px',
+};
+
 const ChartStyle = {
     width: '100%',
-    maxwidth: '800px',
-    height: '60vh'
+    height: '100%',
 };
 
 const buttonStyle = {
