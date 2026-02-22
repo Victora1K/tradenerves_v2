@@ -89,6 +89,13 @@ body {
     flex: 0 0 auto;
  }
 
+/* Chart plot container - explicit heights per breakpoint */
+.chart-plot-container {
+  width: 100%;
+  height: calc(100vh - 280px);
+  min-height: 400px;
+}
+
 /* ========================================
    RESPONSIVE GRID LAYOUTS
    ======================================== */
@@ -163,6 +170,11 @@ body {
   .dashboard-main-grid > div:first-child > div:first-child {
     height: 350px !important;
     min-height: 350px !important;
+  }
+
+  .chart-plot-container {
+    height: 350px;
+    min-height: 350px;
   }
 
   /* Allow sidebar to scroll on mobile */
