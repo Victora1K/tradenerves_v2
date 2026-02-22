@@ -77,11 +77,11 @@ const PatternsInfo = () => {
                     >
                         <Card hover className="h-full">
                             {/* Pattern Image */}
-                            <div className="mb-4 p-4 bg-white/5 rounded-lg">
+                            <div className="mb-4 p-4 bg-white/5 rounded-lg flex justify-center">
                                 <img 
                                     src={pattern.imgSrc} 
                                     alt={pattern.name} 
-                                    className="w-full h-48 object-contain"
+                                    className="h-32 md:h-48 w-auto max-w-full object-contain"
                                 />
                             </div>
 
