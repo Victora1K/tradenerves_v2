@@ -467,7 +467,7 @@ const tradingStyle = {
             style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
           >
             {displayData.dates.length > 0 ? (
-              <div style={{ flex: 1, minHeight: 0 }}>
+              <div style={{ width: '100%', height: '350px' }}>
                 <Plot
                   data={[
                     {
