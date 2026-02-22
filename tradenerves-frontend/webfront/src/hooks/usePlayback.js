@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-export function usePlayback(stockData, initialSpeed = 200, initialBars = null) {
+export function usePlayback(stockData, initialSpeed = 500, initialBars = null) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [playSpeed, setPlaySpeed] = useState(initialSpeed);
