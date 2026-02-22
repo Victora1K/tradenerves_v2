@@ -1,10 +1,14 @@
-# File: /backend/db/init_db.py
+# File: /backend/db/init_five_db.py
 
+import sys
 import os
+from pathlib import Path
 import sqlite3
 
-# Ensure that the database path points to the right directory
-db_path = os.path.abspath(r'C:\Users\Victo\OneDrive\Desktop\Codebase\Tradenerves\tradenerves-backend\backend\db\stocks_five.db')
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from paths import INTRADAY_DB_PATH
+
+db_path = INTRADAY_DB_PATH
 
 # Connect to the database using the absolute path
 conn = sqlite3.connect(db_path)
