@@ -692,7 +692,7 @@ const tradingStyle = {
                   </select>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-                  <Button variant="primary" onClick={fetchPatternData} style={{ width: '100%' }} icon={<Zap size={14} />} size="sm">
+                  <Button variant="primary" onClick={fetchPatternData} style={{ width: '100%' }} icon={<Zap size={16} />} size="md">
                     Fetch
                   </Button>
                 </div>

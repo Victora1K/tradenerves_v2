@@ -14,7 +14,7 @@ const Button = ({
   ...props 
 }) => {
   const variantStyles = {
-    primary: { backgroundColor: '#0284c7', color: '#ffffff', borderRadius: '0.5rem', fontWeight: '500', transition: 'all 0.2s' },
+    primary: { backgroundColor: '#0ea5e9', color: '#ffffff', borderRadius: '0.5rem', fontWeight: '700', boxShadow: '0 0 12px rgba(14, 165, 233, 0.5)', border: '1px solid rgba(14,165,233,0.8)', transition: 'all 0.2s' },
     secondary: { backgroundColor: 'rgba(255,255,255,0.1)', color: '#f3f4f6', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.5rem', fontWeight: '500', transition: 'all 0.2s' },
     success: { backgroundColor: '#10b981', color: '#ffffff', borderRadius: '0.5rem', fontWeight: '500', transition: 'all 0.2s' },
     danger: { backgroundColor: '#ef4444', color: '#ffffff', borderRadius: '0.5rem', fontWeight: '500', transition: 'all 0.2s' },
