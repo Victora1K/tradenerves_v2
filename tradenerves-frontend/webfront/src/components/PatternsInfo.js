@@ -81,7 +81,7 @@ const PatternsInfo = () => {
                                 <img 
                                     src={pattern.imgSrc} 
                                     alt={pattern.name} 
-                                    className="h-32 md:h-48 w-auto max-w-full object-contain"
+                                    style={{ maxHeight: '150px', maxWidth: '200px', width: '100%', objectFit: 'contain' }}
                                 />
                             </div>
 
