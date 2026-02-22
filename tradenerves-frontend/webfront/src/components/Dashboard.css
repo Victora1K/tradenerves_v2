@@ -154,6 +154,17 @@ body {
     overflow-y: auto;
   }
 
+  /* Give the chart column a fixed height on mobile */
+  .dashboard-main-grid > div:first-child {
+    min-height: 420px;
+  }
+
+  /* Ensure the chart card fills its container */
+  .dashboard-main-grid > div:first-child > div:first-child {
+    height: 350px !important;
+    min-height: 350px !important;
+  }
+
   /* Allow sidebar to scroll on mobile */
   .dashboard-main-grid > div:last-child {
     max-height: none !important;
