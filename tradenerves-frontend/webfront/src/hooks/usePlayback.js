@@ -4,7 +4,7 @@ export function usePlayback(stockData, initialSpeed = 500, initialBars = null) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [playSpeed, setPlaySpeed] = useState(initialSpeed);
-  const [maxRange, setMaxRange] = useState(1750)
+  const [maxRange, setMaxRange] = useState(730)
   const [displayData, setDisplayData] = useState({ 
     dates: [], open: [], high: [], low: [], close: [], volume: [] 
   });
@@ -51,8 +51,7 @@ export function usePlayback(stockData, initialSpeed = 500, initialBars = null) {
       setCurrentIndex((prevIndex) => {
         const nextIndex = prevIndex + 1;
         if (dataRef.current.dates.length < maxRange) {
-          setMaxRange(1200)
-      
+          setMaxRange(730)
         }
         if (nextIndex <= maxRange) {
           setDisplayData({
