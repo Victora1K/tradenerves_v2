@@ -53,7 +53,7 @@ const Dashboard = ({ totalAccountValue, setTotalAccountValue }) => {
     isPlaying,
     playSpeed,
     controls: playbackControls
-  } = usePlayback(stockData, 200, LOOKBACK_BARS + 3); // Show lookback + sequence initially
+  } = usePlayback(stockData, 500, LOOKBACK_BARS + 3); // Show lookback + sequence initially
 
   // Format currency with commas and 2 decimal places
   const formatCurrency = (value) => {
