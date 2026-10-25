@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 from datetime import datetime, timezone
 
-API_KEY = os.getenv('POLYGON_API_KEY')
+API_KEY = os.getenv('POLYGON_API_KEY') or os.getenv('MASSIVE_API_KEY')
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 db_path = os.getenv('TRADENERVES_INTRADAY_DB_PATH') or str(BACKEND_DIR / 'db' / 'stocks_five.db')

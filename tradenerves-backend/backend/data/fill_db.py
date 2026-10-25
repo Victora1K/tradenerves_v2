@@ -236,7 +236,7 @@ def fetch_intraday(symbol, api_key, start_date=None, end_date=None, years_back=5
 
 def main():
     parser = argparse.ArgumentParser(description='Fill daily and intraday Polygon data into SQLite DBs.')
-    parser.add_argument('--api-key', default=os.getenv('POLYGON_API_KEY'))
+    parser.add_argument('--api-key', default=os.getenv('POLYGON_API_KEY') or os.getenv('MASSIVE_API_KEY'))
     parser.add_argument('--symbols', nargs='*', default=DEFAULT_SYMBOLS)
     parser.add_argument('--mode', choices=['daily', 'intraday', 'both'], default='both')
     parser.add_argument('--start-date', help='YYYY-MM-DD start date override')
@@ -253,7 +253,7 @@ def main():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 
     if not args.api_key:
-        raise SystemExit('Missing Polygon API key. Set POLYGON_API_KEY or pass --api-key.')
+        raise SystemExit('Missing Polygon/Massive API key. Set POLYGON_API_KEY, MASSIVE_API_KEY, or pass --api-key.')
 
     for symbol in args.symbols:
         if args.mode in ('daily', 'both'):

@@ -5,7 +5,7 @@ import sqlite3
 import requests
 from datetime import datetime, timedelta
 
-API_KEY = os.getenv('POLYGON_API_KEY')
+API_KEY = os.getenv('POLYGON_API_KEY') or os.getenv('MASSIVE_API_KEY')
 
 SYMBOLS = ['AAPL', 'MSFT', 'NVDA', 'GOOGL', 'META', 'ZS', 
            'JPM', 'BAC', 'GS', 'WFC', 'JNJ', 'UNH', 'PFE']
