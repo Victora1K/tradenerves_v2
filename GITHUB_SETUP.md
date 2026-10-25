@@ -4,13 +4,9 @@ Complete guide to push Tradenerves to GitHub safely.
 
 ## ⚠️ CRITICAL: Security Check Before Pushing
 
-**Found hardcoded API keys in these files:**
-- `tradenerves-backend/backend/data/fetch_data.py`
-- `tradenerves-backend/backend/data/fetch_data_five.py`
-- `tradenerves-backend/backend/data/intra_day.py`
-- `tradenerves-backend/backend/data/fetch_data.py.old`
-
-**These MUST be removed before pushing to GitHub!**
+**API keys must only be supplied through environment variables.** The application
+accepts `POLYGON_API_KEY` or `MASSIVE_API_KEY`; never add a literal key to code or
+documentation.
 
 ---
 
@@ -34,32 +30,9 @@ git status --ignored
 
 ### 2. Remove Hardcoded API Keys
 
-**Option A: Comment out for now (Quick)**
-
-Edit these files and comment out the API_KEY line:
-
-`tradenerves-backend/backend/data/fetch_data.py`:
+Use environment reads only:
 ```python
-# API_KEY = 'gNUdx8Rrob9OtDQSGK9EBX7K179qpNjQ'  # REMOVED - use .env file
-API_KEY = os.getenv('POLYGON_API_KEY')
-```
-
-`tradenerves-backend/backend/data/fetch_data_five.py`:
-```python
-# API_KEY = 'gNUdx8Rrob9OtDQSGK9EBX7K179qpNjQ'  # REMOVED - use .env file
-API_KEY = os.getenv('POLYGON_API_KEY')
-```
-
-`tradenerves-backend/backend/data/intra_day.py`:
-```python
-# Already uses environment variable - just remove fallback
-API_KEY = os.getenv('POLYGON_API_KEY')  # Remove the default value
-```
-
-**Option B: Delete old files**
-```bash
-# Delete backup file with exposed key
-rm tradenerves-backend/backend/data/fetch_data.py.old
+API_KEY = os.getenv("POLYGON_API_KEY") or os.getenv("MASSIVE_API_KEY")
 ```
 
 ### 3. Create Local .env File (NOT committed)
@@ -69,7 +42,7 @@ cd tradenerves-backend/backend
 cp .env.example .env
 
 # Edit .env and add your actual API key
-# POLYGON_API_KEY=gNUdx8Rrob9OtDQSGK9EBX7K179qpNjQ
+# POLYGON_API_KEY=your_polygon_api_key_here
 ```
 
 **Important:** `.env` is in `.gitignore` and will NOT be pushed to GitHub!

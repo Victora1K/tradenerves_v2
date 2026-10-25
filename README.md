@@ -96,6 +96,51 @@ yarn start  # Runs on http://localhost:3000
 
 ---
 
+## 🤖 Local tradebot terminal chat
+
+`tradebot` is a separate terminal workflow. It reads the existing daily
+`db/stocks.db` and five-minute `db/stocks_five.db` stores, detects the existing
+single-candle patterns, runs event studies, and saves research findings to the
+separate `db/tradebot_findings.db` file. It does not start Flask or the
+`app.py` data-population thread.
+
+Use a Qwen Instruct GGUF compatible with your Mac and llama.cpp; weights are not
+included or downloaded by this repository. Start llama.cpp with Jinja enabled so
+Qwen can emit OpenAI-compatible tool calls:
+
+```bash
+llama-server -m /path/to/Qwen-Instruct.gguf --jinja --port 8080
+```
+
+Then, from the repository root:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r tradenerves-backend/backend/requirements.txt
+export POLYGON_API_KEY=your_polygon_or_massive_key  # only needed when bars are absent
+export LLAMA_SERVER_URL=http://127.0.0.1:8080
+export LLAMA_MODEL=qwen
+python -m tradebot
+```
+
+The server key is optional and can be set with `LLAMA_SERVER_API_KEY`. A question
+should lead the model to load or fetch bars, run a pattern event study, and save
+the result. The study measures close-to-close return over a fixed number of
+future bars; it does not model fills, spread, fees, market impact, or overlapping
+signals and is not trading advice.
+
+Run its offline test suite without a model or network:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Follow-ups intentionally excluded from this first slice: web search, RAG
+embeddings, deleting the React app, and order placement.
+
+---
+
 ## 📊 Database Setup
 
 The application requires a populated `stocks.db` with pattern data:

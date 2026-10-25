@@ -26,8 +26,8 @@ import random
 import threading
 from paths import DAILY_DB_PATH, INTRADAY_DB_PATH, TRADING_DB_PATH
 
-# API Key for Polygon.io
-API_KEY = 'gNUdx8Rrob9OtDQSGK9EBX7K179qpNjQ'  # Test API Key
+# Polygon and Massive use the same aggregate API key.
+API_KEY = os.getenv('POLYGON_API_KEY') or os.getenv('MASSIVE_API_KEY')
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for the entire Flask app
